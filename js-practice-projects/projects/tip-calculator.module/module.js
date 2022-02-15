@@ -21,34 +21,35 @@
   setEventsAndDefaults();
 
   function setEventsAndDefaults() {
-    isCustomTip()
+    isCustomTip();
     calculateResults();
+    validateFields();
     tipOptions.forEach(option => {
       option.addEventListener('click', addActiveBtnClass);
     });
     customTipInput.addEventListener('input', () => {
-      isCustomTip()
+      isCustomTip();
       validateFields();
     });
     peopleInput.addEventListener('input', validateFields);
-    billInput.addEventListener('input', validateFields)
+    billInput.addEventListener('input', validateFields);
   }
 
   function calculateResults() {
-    let tipPercent = document.querySelector('.tip-button.active').dataset.tip
-    let tipMultiplier = tipPercent / 100
+    let tipPercent = document.querySelector('.tip-button.active').dataset.tip;
+    let tipMultiplier = tipPercent / 100;
     let totalTip = Math.round(((billInput.value * tipMultiplier) + Number.EPSILON) * 100) / 100;
     let billTotal = Math.round(((parseFloat(billInput.value) + totalTip) + Number.EPSILON) * 100) / 100;
     let individualTip = Math.round(((totalTip / peopleInput.value) + Number.EPSILON) * 100) / 100;
     let individualTotal = Math.round(((billTotal / peopleInput.value) + Number.EPSILON) * 100) / 100;
 
-    if(individualTip == null || individualTip === 'undefined' || individualTip === 'Infinity') {
+    if(individualTip == null || individualTip === 'undefined' || individualTip === 'Infinity' || isNaN(individualTip)) {
       tipResults.textContent = `$0.00`;
     } else {
       tipResults.textContent = `$${individualTip}`;
     }
 
-    if(individualTotal == null || individualTotal === 'undefined' || individualTotal === 'Infinity') {
+    if(individualTotal == null || individualTotal === 'undefined' || individualTotal === 'Infinity' || isNaN(individualTotal)) {
       totalResults.textContent = `$0.00`;
     } else {
       totalResults.textContent = `$${individualTotal}`;
@@ -67,10 +68,10 @@
   }
 
   function resetFields() {
-    billInput.value = 142.55;
+    billInput.value = null;
     customTipInput.value = null;
     customTipInput.classList.remove(ACTIVE_CLASS);
-    peopleInput.value = 5;
+    peopleInput.value = null;
 
     tipOptions.forEach(option => {
       option.classList.remove(ACTIVE_CLASS);
