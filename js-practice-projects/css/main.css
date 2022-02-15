@@ -1,0 +1,13 @@
+.content-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.dnd-section > .row-fluid {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 16px;
+}

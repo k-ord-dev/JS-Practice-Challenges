@@ -1,0 +1,72 @@
+{% macro renderTipButtons(tip_amount, activeClass) %}
+  <button class="tip-button py-2 {{ activeClass }}" data-tip="{{ tip_amount }}">{{ tip_amount }}%</button>
+{% endmacro %}
+
+<div class="my-20 py-40">
+  <img class="mx-auto mt-0 mb-20" src="https://f.hubspotusercontent30.net/hubfs/21450339/Practice%20Projects/Tip%20Calculator/SPLITTER_logo.svg" alt="Splitter Logo">
+  
+  {# CALCULATOR INPUT #}
+  <div class="calc-container flex flex-col md:flex-row justify-between gap-8 md:gap-10 w-full lg:w-9/12 p-4 md:p-8">
+    <div class="calc__input flex flex-col items-start gap-8 md:gap-10 lg:m-4 lg:mr-0">
+
+      {# BILL INPUT #}
+      <div class="w-full">
+        <p class="mb-2">Bill</p>
+        <div class="relative">
+          <img class="input-icon" src="https://f.hubspotusercontent30.net/hubfs/21450339/Practice%20Projects/Tip%20Calculator/icon-dollar.svg" alt="Dollar Icon">
+          <input class="w-full text-right py-2 pr-4 pl-9" name="bill" type="number" value="142.55" placeholder="0">
+        </div>
+      </div>
+
+      {# TIP SELECTION #}
+      <div class="w-full">
+        <p class="mb-4">Select Tip %</p>
+        <div class="tip-container flex flex-wrap">
+          {{ renderTipButtons('5') }}
+          {{ renderTipButtons('10') }}
+          {{ renderTipButtons('15', 'active') }}
+          {{ renderTipButtons('25') }}
+          {{ renderTipButtons('50') }}
+          <input class="tip-button tip-button-custom py-2 text-center" data-tip="" name="tip" value="" type="number" placeholder="Custom">
+        </div>
+      </div>
+
+      {# PEOPLE INPUT #}
+      <div class="w-full">
+        <div class="flex justify-between mb-2">
+          <p>Number of People</p>
+          <p class="disabled-text">Can't be zero</p>
+        </div>
+        <div class="relative">
+          <img class="input-icon" src="https://f.hubspotusercontent30.net/hubfs/21450339/Practice%20Projects/Tip%20Calculator/icon-person.svg" alt="Person Icon">
+          <input class="w-full text-right py-2 pr-4 pl-9" name="people" type="number" value="5" placeholder="0">
+        </div>
+      </div>
+    </div>
+
+    {# CALCULATOR RESULTS #}
+    <div class="calc__results flex flex-col justify-between items-start p-6 md:p-10">
+      
+      {# RESULTS CONTAINER #}
+      <div class="w-full">
+        <div class="flex justify-between items-center mt-3 md:mt-0 mb-5 md:mb-6">
+          <div>
+            <p>Tip Amount</p>
+            <p class="text-sm">/ person</p>
+          </div>
+          <span class="results tip-results">$0.00</span>
+        </div>
+        <div class="flex justify-between items-center mb-8 md:mb-0">
+          <div>
+            <p>Total</p>
+            <p class="text-sm">/ person</p>
+          </div>
+          <span class="results total-results">$0.00</span>
+        </div>
+      </div>
+
+      {# RESET BUTTON #}
+      <button class="reset-btn w-full py-2">reset</button>
+    </div>
+  </div>
+</div>

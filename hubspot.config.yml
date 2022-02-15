@@ -1,0 +1,12 @@
+defaultPortal: Kevin
+portals:
+  - name: Kevin
+    portalId: 21450339
+    authType: personalaccesskey
+    auth:
+      tokenInfo:
+        accessToken: >-
+          CLPGneLvLxIJAA0AAAAA4A0DGOOcnQoghrGsBiju6QwyFCA5cCHhEBRXXSyok3pON9Zf_W-yOigAAARBAAAAeAAAAAAAAAAAAAAAAAAAAAQAAMAHAP7_MTwAAAYAAABgQhTxrfofb9lt0ho0Ov43wh_Tg0Cv8koDbmExUgBaAA
+        expiresAt: '2022-02-15T07:27:23.962Z'
+    personalAccessKey: >-
+      CiQ0NzMwNzM0OS1mOTlhLTRmNmYtYjk1MS03M2YzMDI0YTM2ZTEQ45ydChiGsawGKhkABeaRghK_hih__Ow79EqLfsulFU_Od03eSgNuYTE

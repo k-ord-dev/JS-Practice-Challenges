@@ -1,0 +1,26 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pull": "hs fetch --account=21450339 js-practice-projects --overwrite",
+    "push": "hs upload --account=21450339 js-practice-projects js-practice-projects",
+    "files": "hs filemanager upload --account=21450339",
+    "watch": "hs watch --account=21450339 js-practice-projects js-practice-projects --remove",
+    "compile": "postcss ./tailwind.css -o ./js-practice-projects/css/tailwind.css -w --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k-ord-dev/JS-Practice-Challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@hubspot/cli": "^3.0.6",
+    "autoprefixer": "^10.4.0",
+    "postcss-cli": "^9.0.1",
+    "tailwindcss": "^2.2.19"
+  }
+}

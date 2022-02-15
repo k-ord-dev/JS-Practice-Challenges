@@ -1,0 +1,12 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 66242830455,
+  "label" : "Tip Calculator",
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/projects/tip-calculator.css",
+    "name" : "tip-calculator.css"
+  } ],
+  "is_available_for_new_content" : true
+}
