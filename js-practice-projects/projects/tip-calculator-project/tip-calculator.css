@@ -16,8 +16,7 @@
 {% set border_radius_sm = '5px' %}
 {% set transition = 'all 200ms ease-in-out' %}
 
-
-h1, h2, h3, h4, h5, a, p, button, span, input {
+html, body {
 font-family: 'Space Mono', monospace;
 }
 
@@ -25,6 +24,13 @@ p {
   font-size: 16px;
   line-height: 24px;
   font-weight: bold;
+}
+
+fieldset label {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: bold;
+  color: {{ green_xdark }};
 }
 
 input,

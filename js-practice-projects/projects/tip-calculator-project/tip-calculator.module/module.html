@@ -11,11 +11,13 @@
 
       {# BILL INPUT #}
       <div class="w-full">
-        <p class="mb-2">Bill</p>
-        <div class="relative">
-          <img class="input-icon" src="https://f.hubspotusercontent30.net/hubfs/21450339/Practice%20Projects/Tip%20Calculator/icon-dollar.svg" alt="Dollar Icon">
-          <input class="w-full text-right py-2 pr-4 pl-9" name="bill" type="number" value="142.55" placeholder="0">
-        </div>
+        <fieldset>
+          <label for="bill">Bill</label>
+          <div class="relative mt-2">
+            <img class="input-icon" src="https://f.hubspotusercontent30.net/hubfs/21450339/Practice%20Projects/Tip%20Calculator/icon-dollar.svg" alt="Dollar Icon">
+            <input class="w-full text-right py-2 pr-4 pl-9" name="bill" type="number" value="" placeholder="0">
+          </div>
+        </fieldset>
       </div>
 
       {# TIP SELECTION #}
@@ -33,14 +35,16 @@
 
       {# PEOPLE INPUT #}
       <div class="w-full">
-        <div class="flex justify-between mb-2">
-          <p>Number of People</p>
-          <p class="disabled-text">Can't be zero</p>
-        </div>
-        <div class="relative">
-          <img class="input-icon" src="https://f.hubspotusercontent30.net/hubfs/21450339/Practice%20Projects/Tip%20Calculator/icon-person.svg" alt="Person Icon">
-          <input class="w-full text-right py-2 pr-4 pl-9" name="people" type="number" value="5" placeholder="0">
-        </div>
+        <fieldset>
+          <div class="flex justify-between">
+            <label for="people">Number of People</label>
+            <p class="disabled-text">Can't be zero</p>
+          </div>
+          <div class="relative mt-2">
+            <img class="input-icon" src="https://f.hubspotusercontent30.net/hubfs/21450339/Practice%20Projects/Tip%20Calculator/icon-person.svg" alt="Person Icon">
+            <input class="w-full text-right py-2 pr-4 pl-9" name="people" type="number" value="" placeholder="0">
+          </div>
+        </fieldset>
       </div>
     </div>
 

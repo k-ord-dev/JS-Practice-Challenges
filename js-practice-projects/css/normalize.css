@@ -415,7 +415,7 @@ select
 /* Text Inputs
 -----------------------------------------------*/
 
-input[type=date],
+/* input[type=date],
 input[type=datetime],
 input[type=datetime-local],
 input[type=email],
@@ -430,7 +430,7 @@ input[type=time],
 input[type=url],
 input[type=week]
 {
-}
+} */
 
 input[type=number]:-webkit-inner-spin-button {
   display: none;
