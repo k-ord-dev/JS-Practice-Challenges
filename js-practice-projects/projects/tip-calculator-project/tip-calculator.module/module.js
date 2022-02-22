@@ -42,6 +42,7 @@
     let customTipInt = parseInt(customTipInput.value)
     let number0fPeople = parseInt(peopleInput.value);
 
+    // determine if the tip amount is a preset or custom amount
     if (customTipInput.value && Number.isFinite(customTipInt)) {
       customTipInput.dataset.tip = customTipInput.value;
       customTipInput.classList.add(ACTIVE_CLASS);
@@ -50,10 +51,12 @@
         option.classList.remove(ACTIVE_CLASS);
       });
     }
+
     // set resetbtn to disabled
     resetBtn.classList.remove(ACTIVE_CLASS);
     resetBtn.removeEventListener('click', resetFields);
-    // set reset btn to active in an input has a value
+
+    // set reset btn to active if an input has a value
     for (let i = 0; i < inputList.length; i++) {
       let elValue = parseInt(inputList[i].value)
       if (Number.isFinite(elValue) && elValue !== 0) {
@@ -61,6 +64,7 @@
         resetBtn.addEventListener('click', resetFields);
       };
     }
+
     // Add error msg is Number of People is 0
     if (Number.isFinite(number0fPeople) && number0fPeople !== 0) {
       errorText.classList.remove(ACTIVE_CLASS);
@@ -73,22 +77,24 @@
     }
   };
 
+  // removes all values and active classes on click of reset btn
   function resetFields() {
-    billInput.value = null;
-    customTipInput.value = null;
     customTipInput.classList.remove(ACTIVE_CLASS);
-    peopleInput.value = null;
-    defaultTip.classList.add(ACTIVE_CLASS);
     resetBtn.classList.remove(ACTIVE_CLASS);
-    resetBtn.removeEventListener('click', resetFields);
     tipResults.textContent = `$0.00`;
     totalResults.textContent = `$0.00`;
+    resetBtn.removeEventListener('click', resetFields);
+
+    inputList.forEach(input => {
+      input.value = null;
+    })
 
     tipOptions.forEach(option => {
       option.classList.remove(ACTIVE_CLASS);
     });
   }
 
+  // calculates the results after validation
   function calculateResults() {
     let tipPercent = document.querySelector('.tip-button.active').dataset.tip;
     let tipMultiplier = tipPercent / 100;
